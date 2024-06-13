@@ -36,7 +36,7 @@ static void display_fetch_info(char *color,
     char *data = NULL;
 
     if (count > 1 && count <= 2 && *i < SIZE_FETCH_INFO) {
-        dprintf(1, "\t\t\e%s%s%s@\e%s%s", color,
+        dprintf(1, "\t\t\033%s%s%s@\033%s%s", color,
         getenv("USER"), DEFAULT, color,
         getenv("HOSTNAME"));
     }
@@ -46,7 +46,7 @@ static void display_fetch_info(char *color,
     }
     if (count > 3 && *i < SIZE_FETCH_INFO) {
         data = FETCH_INFO[*i].data();
-        dprintf(1, "\t\t\e%s%s%s: %s", color,
+        dprintf(1, "\t\t\033%s%s%s: %s", color,
         FETCH_INFO[*i].var, DEFAULT, (data != NULL ? data : "unknown"));
         *i = *i + 1;
     }

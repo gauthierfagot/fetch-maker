@@ -24,6 +24,7 @@ char *get_uptime(void);
 char *get_shell(void);
 char *get_resolution(void);
 char *get_desktop_environment(void);
+char *get_terminal(void);
 char *get_cpu(void);
 char *get_gpu(void);
 char *get_memory(void);
@@ -43,6 +44,7 @@ static const fetch_info_t FETCH_INFO[] = {
     {"Shell", get_shell},
     {"Resolution", get_resolution},
     {"DE", get_desktop_environment},
+    {"Terminal", get_terminal},
     {"CPU", get_cpu},
     {"GPU", get_gpu},
     {"Memory", get_memory}

@@ -39,11 +39,22 @@ char *get_host(void)
 
 char *get_shell(void)
 {
-    char *shell = strdup("BDShell");
+    char *shell = getenv("SHELL");
 
     if (shell == NULL)
         return NULL;
+    shell = strdup(shell);
     return shell;
+}
+
+char *get_terminal(void)
+{
+    char *terminal = getenv("TERM_PROGRAM");
+
+    if (terminal == NULL)
+        return NULL;
+    terminal = strdup(terminal);
+    return terminal;
 }
 
 static char *compute_uptime(long time)
